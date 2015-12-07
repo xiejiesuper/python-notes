@@ -2,7 +2,7 @@
 import MySQLdb
 
 class Mysqlexec(object):
-    def __init__(self, host, user, pasd, db,isdict=False) :
+    def __init__(self, host, user, pasd, db,isdict=False):
         self.conn = MySQLdb.connect(host=host, user=user, passwd=pasd, port=3306, db=db, charset="utf8")
         if isdict == True:
             self.cur = self.conn.cursor(cursorclass=MySQLdb.cursors.DictCursor)
