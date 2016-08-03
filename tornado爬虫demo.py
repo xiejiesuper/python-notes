@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-qwer
-"""
 from datetime import timedelta
 from tornado import httpclient, gen, ioloop, queues
 
