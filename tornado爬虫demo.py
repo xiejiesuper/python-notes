@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""
+qwer
+"""
 from datetime import timedelta
 from tornado import httpclient, gen, ioloop, queues
 
@@ -40,7 +43,7 @@ def main():
     def worker():
         while True:
             yield fetch_url()
-            
+
     q.put('http://www.google.com.hk/webhp?hl=zh-CN&sourceid=cnhp')
     q.put('http://www.baidu.com/')
     q.put('http://www.163.com/')
@@ -54,7 +57,7 @@ def main():
     for _ in range(concurrency):
         worker()
     yield q.join(timeout=timedelta(seconds=300))
-    
+
 if __name__ == '__main__':
     import logging
     logging.basicConfig()
